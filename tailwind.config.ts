@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
 	darkMode: ["class"],
@@ -26,7 +27,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					deep: 'hsl(var(--primary-deep))' // Added TSB Deep Blue variant
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -68,6 +70,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			fontFamily: {
+        sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans], // Added TSB Sans font
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
